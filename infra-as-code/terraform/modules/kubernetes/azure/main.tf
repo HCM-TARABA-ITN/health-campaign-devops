@@ -3,15 +3,13 @@ resource "azurerm_kubernetes_cluster" "aks" {
   location            = "${var.location}"
   resource_group_name = "${var.resource_group}"
   dns_prefix          = "${var.name}"
+  kubernetes_version = "${var.kubernetes_version}"
   
   default_node_pool {
     name       = "default"
     vm_size    = "${var.vm_size}"
     node_count = "${var.node_count}"
     vnet_subnet_id   = "${var.subnet_id}"
-  }
-  lifecycle {
-    ignore_changes = [ default_node_pool ]
   }
 
   service_principal {
@@ -35,17 +33,6 @@ resource "azurerm_kubernetes_cluster" "aks" {
 }
 
 
-resource "azurerm_kubernetes_cluster_node_pool" "np1" {
-  name                  = "tarabaprod"
-  kubernetes_cluster_id = azurerm_kubernetes_cluster.aks.id
-  vm_size               = "Standard_B4ms"
-  node_count            = 1
-  vnet_subnet_id = "${var.subnet_id_new}"
- 
-  tags = {
-    Environment = "${var.environment}"
-  }
-}
 
 resource "azurerm_subnet_network_security_group_association" "aks" {
   subnet_id                 = "${var.subnet_id}"
