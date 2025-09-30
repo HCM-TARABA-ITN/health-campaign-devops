@@ -652,11 +652,11 @@ prePuller:
 ingress:
   enabled: true
   hosts:
-    - taraba-hcm.digit.org
+    - taraba-itn-uat.digit.org
   tls:
     - hosts:
-        - taraba-hcm.digit.org
-      secretName: taraba-hcm.digit.org-tls-certs
+        - taraba-itn-uat.digit.org
+      secretName: taraba-itn-uat.digit.org-tls-certs
   annotations: {}
   ingressClassName: nginx
   pathSuffix: hub

@@ -61,7 +61,11 @@ cluster-configs:
 
     pgadmin: 
       namespace: playground
-      name: pgadmin       
+      name: pgadmin  
+
+    project-factory:
+      namespace: egov
+      name: project-factory     
 
     egov-enc-service: 
       namespace: egov

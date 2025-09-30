@@ -223,6 +223,11 @@ env: |
       secretKeyRef:
         name: db
         key: password   
+  - name: BASE_SECRET
+    valueFrom:
+      secretKeyRef:
+          name: project-factory
+          key: base-secret
   - name: DB_PORT
     value: "5432"
   - name: DB_SCHEMA
