@@ -281,6 +281,17 @@ env: |
     value: {{ .Values.ExcludeHierarchyTypeFromBoundaryCodes | default "false" | quote }}
   - name: EXCLUDE_BOUNDARY_NAME_AT_LAST_FROM_BOUNDARY_CODES
     value: {{ .Values.ExcludeBoundaryTypeFromLastBoundaryCodes | default "false" | quote }}
+  
+  - name: EGOV_MDMS_V2_CREATE_ENDPOINT
+    value: mdms-v2/v2/_create
+  - name: EGOV_MDMS_V2_UPDATE_ENDPOINT
+    value: mdms-v2/v2/_update
+
+  - name: EGOV_MDMS_HOST
+    valueFrom:
+      configMapKeyRef:
+        name: egov-service-host
+        key: mdms-v2
 
 apiVersion: autoscaling/v2beta2
 kind: HorizontalPodAutoscaler
