@@ -70,10 +70,6 @@ env: |
   {{- if index .Values "is-s3-enabled" }}
   - name: ISS3ENABLED
     value: "true"
-  {{- end }}  
-  {{- else }}
-  - name: ISS3ENABLED
-    value: "false"
   {{- end }}
   {{- if index .Values "minio-enabled" }}
   - name: AWS_KEY
