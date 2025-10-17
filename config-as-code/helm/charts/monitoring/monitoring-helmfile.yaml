@@ -2,9 +2,9 @@ environments:
   env:
     values:
       - namespace: monitoring
-      - ../../../environments/azure-nigeria-prod.yaml
-    # secrets:
-    #   - ../../../environments/azure-nigeria-prod-secrets.yaml
+      - ../../../environments/azure-taraba-itn-prod.yaml
+    secrets:
+      - ../../../environments/azure-taraba-itn-prod-secrets.yaml
 ---
 
 repositories:
