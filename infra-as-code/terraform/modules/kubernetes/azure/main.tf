@@ -32,6 +32,17 @@ resource "azurerm_kubernetes_cluster" "aks" {
 
 }
 
+resource "azurerm_kubernetes_cluster_node_pool" "np" {
+  name                  = "tarabaitnprd"
+  kubernetes_cluster_id = azurerm_kubernetes_cluster.aks.id
+  vm_size               = "${var.vm_size}"
+  node_count            = 1
+  vnet_subnet_id = "${var.subnet_id_new}"
+
+  tags = {
+    Environment = "${var.environment}"
+  }
+}
 
 
 resource "azurerm_subnet_network_security_group_association" "aks" {
