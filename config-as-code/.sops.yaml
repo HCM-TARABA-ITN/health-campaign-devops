@@ -3,7 +3,7 @@ creation_rules:
   # upon creation of a file that matches the pattern *dev.yaml,
   # KMS set A is used
   # eGOV Internal ------------------------------------------------------------------------------------------------------------- #
-  - path_regex: environments/azure-nigeria-uat-secrets.yaml$
-    azure_keyvault: "https://ng-uat.vault.azure.net/keys/ng-uat/145aa46063044683bde02cf70ab6338e"
-  - path_regex: environments/azure-nigeria-prod-secrets.yaml$
-    azure_keyvault: "https://ng-uat.vault.azure.net/keys/ng-uat/145aa46063044683bde02cf70ab6338e"
+  
+
+  - path_regex: environments/azure-taraba-itn-uat-secrets.yaml$
+    azure_keyvault: "https://taraba-itn-uat.vault.azure.net/keys/taraba-itn-uat-master-key/2c8d191a3bb546c2a365058db7686da3"
